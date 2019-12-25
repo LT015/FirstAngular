@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import {AboutModule} from './about/about.module';
+import {LayoutModule} from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {AboutModule} from './about/about.module';
   ],
   imports: [
     BrowserModule,
-    AboutModule
+    AboutModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
