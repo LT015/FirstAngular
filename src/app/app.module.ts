@@ -10,10 +10,11 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import {FormsModule} from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import {TodoService} from './providers/todo.service';
+import { CategoryPipe } from './pipes/category.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, TodoComponent, CreateTodoComponent, TodoListComponent, DetailComponent],
+  declarations: [AppComponent, TodoComponent, CreateTodoComponent, TodoListComponent, DetailComponent, CategoryPipe],
   imports: [BrowserModule, LayoutModule, AppRoutingModule, FormsModule],
   providers: [TodoService],
   bootstrap: [AppComponent]
