@@ -1,0 +1,15 @@
+ul {
+    width: 100%;
+    background: rgb(27,111,221,3);
+    display: flex;
+}
+
+li {
+    padding: 10px 2em;
+    cursor: pointer; // 鼠标移上去后的效果
+    color: gray;
+}
+
+.active {
+    color: black;
+}
