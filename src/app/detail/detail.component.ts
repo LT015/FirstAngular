@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {TodoService} from '../providers/todo.service';
+import {Todo} from '../interface';
 
 @Component({
   selector: 'app-detail',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+    todo: Todo;
 
-  constructor() { }
+    constructor(private route: ActivatedRoute, private todoService: TodoService) {}
 
   ngOnInit() {
+        const id = +this.route.snapshot.paramMap.get('id');
+        this.todo = this.todoService.getTodo(id);
   }
 
+  goBack() {
+        history.back();
+  }
 }

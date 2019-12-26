@@ -1,1 +1,15 @@
-<p>detail works!</p>
+<ul>
+    <li>
+        <strong>Description:</strong>
+        <span>{{todo.description}}</span>
+    </li>
+    <li>
+        <strong>Category:</strong>
+        <span>{{todo.category | category}}</span>
+    </li>
+    <li>
+        <strong>Content:</strong>
+        <span>{{todo.content}}</span>
+    </li>
+</ul>
+<app-button [text]="'Back'" (click$)="goBack()"></app-button>

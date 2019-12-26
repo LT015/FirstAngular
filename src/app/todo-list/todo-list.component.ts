@@ -20,7 +20,7 @@ export class TodoListComponent implements OnInit {
 
     selectAll = false;
 
-    constructor(private router: Router, private route: ActivatedRoute) { } // 注入服务
+    constructor(private router: Router, private route: ActivatedRoute) { } // 在构造器中注入服务
 
   ngOnInit() {
   }
