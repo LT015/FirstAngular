@@ -8,10 +8,11 @@ import {AppRoutingModule} from './app.routing.module';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import {FormsModule} from '@angular/forms';
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
-  declarations: [AppComponent, TodoComponent, CreateTodoComponent, TodoListComponent],
+  declarations: [AppComponent, TodoComponent, CreateTodoComponent, TodoListComponent, DetailComponent],
   imports: [BrowserModule, LayoutModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

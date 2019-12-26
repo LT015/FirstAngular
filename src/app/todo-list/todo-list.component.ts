@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Todo} from '../interface';
+import {ActivatedRoute, Router} from '@angular/router';
 
 interface PrivateTod extends Todo {
     selected?: boolean;
@@ -19,7 +20,7 @@ export class TodoListComponent implements OnInit {
 
     selectAll = false;
 
-  constructor() { }
+    constructor(private router: Router, private route: ActivatedRoute) { } // 注入服务
 
   ngOnInit() {
   }
@@ -39,6 +40,12 @@ export class TodoListComponent implements OnInit {
 
   check() {
       this.selectAll = this.todos.every(item => item.selected);
+  }
+
+  navigateTo(todo: PrivateTod, enent: MouseEvent) {
+      if (enent.target instanceof HTMLTableCellElement) {
+          this.router.navigate([todo.id], {relativeTo: this.route});
+      }
   }
 
 }
