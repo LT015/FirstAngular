@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Todo} from '../interface';
+
+interface PrivateTod extends Todo{
+    selected?: boolean;
+}
 
 @Component({
   selector: 'app-todo-list',
@@ -6,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-    todos = [
-        {id: 999, description: 'For test purposes1', category: 1, content: '1', selected: false},
-        {id: 999, description: 'For test purposes2', category: 1, content: '2', selected: false}
+    todos: PrivateTod[] = [
+        {id: 999, description: 'For test purposes1', category: 1, content: '1'},
+        {id: 998, description: 'For test purposes2', category: 1, content: '2'},
+        {id: 997, description: 'For test purposes3', category: 1, content: '3'}
     ];
 
     selectAll = false;
@@ -18,8 +24,13 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
   }
 
-  delete(ids) {
+  delete(ids: number[]) {
         this.todos = this.todos.filter(item => ids.indexOf(item.id) === -1);
+  }
+
+  deleteSelected() {
+      const ids = this.todos.filter(item => item.selected).map(item => item.id);
+      this.delete(ids);
   }
 
   toggleAll() {

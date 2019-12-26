@@ -1,3 +1,4 @@
+<button (click)="deleteSelected()">Delete Selected</button>
 <table>
     <thead>
         <tr>
@@ -17,7 +18,7 @@
             <td>{{item.description}}</td>
             <td>{{item.category}}</td>
             <td>
-                <a (click)="delete(item.id)"> Delete</a>
+                <a (click)="delete([item.id])"> Delete</a>
             </td>
         </tr>
     </tbody>
