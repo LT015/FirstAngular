@@ -20,4 +20,8 @@ export class TodoComponent implements OnInit {
         this.todoList = this.todoService.delete(ids);
     }
 
+    add(data: Partial<Todo>) {
+        this.todoList = this.todoService.addTodo(data);
+    }
+
 }

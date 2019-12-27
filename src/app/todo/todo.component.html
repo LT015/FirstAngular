@@ -1,5 +1,5 @@
 <div>
-    <app-create-todo></app-create-todo>
+    <app-create-todo (create)="add($event)"></app-create-todo>
 
     <app-todo-list [todos]="todoList" (delete)="delete($event)"></app-todo-list> <!-- 这个todos和delete是todo-list的，todoList和delete()是todo的 -->
 

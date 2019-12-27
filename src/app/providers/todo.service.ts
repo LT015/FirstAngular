@@ -26,4 +26,11 @@ export class TodoService {
     getTodo(id: number): Todo {
         return this.data.find(item => item.id === id);
     }
+
+    addTodo(todo: Partial<Todo>): Todo[] {
+        const id = parseInt(Math.random() * 1000000 + '', 10);
+        const newTodo = {...todo, id} as Todo;
+        this.data = [...this.data, newTodo];
+        return this.data;
+    }
 }
